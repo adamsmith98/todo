@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   todos: Todo[] = [{title: 'Maths homework', deadline: 'Yesterday', priority: 5},
                    {title: 'Wash dishes', deadline: 'Today', priority: 3},
                    {title: 'Go shopping', deadline: 'Tomorrow', priority: 4},
