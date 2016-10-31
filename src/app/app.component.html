@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<ul class="app-list">
+ <li *ngFor="let todo of todos">
+   <md-card>
+     <h3 md-line class="todo-title">{{todo.title}}</h3>
+     <p md-line class="todo-deadline">{{todo.deadline}}</p>
+     <p md-line class="todo-priority">{{todo.priority}}</p>
+   </md-card>
+ </li>
+</ul>
