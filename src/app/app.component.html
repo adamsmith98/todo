@@ -1,3 +1,10 @@
+<md-card>
+  <i class="material-icons">note_add</i>
+  <md-input placeholder="title" [(ngModel)]="newTitle"></md-input>
+  <md-input placeholder="deadline" [(ngModel)]="newDeadline"></md-input>
+  <md-input placeholder="priority" [(ngModel)]="newPriority"></md-input>
+  <button md-button (click)="addNew(newTitle, newDeadline, newPriority)">Add</button>
+</md-card>
 <ul class="app-list">
  <li *ngFor="let todo of todos">
    <md-card>

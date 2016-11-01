@@ -10,6 +10,10 @@ export class AppComponent {
                    {title: 'Wash dishes', deadline: 'Today', priority: 3},
                    {title: 'Go shopping', deadline: 'Tomorrow', priority: 4},
                    {title: 'Make dinner', deadline: '6pm today', priority: 5}];
+
+  addNew(newTitle: string, newDeadline: string, newPriority: number) {
+    this.todos.unshift({title: newTitle, deadline: newDeadline, priority: newPriority});
+  }
 }
 
 class Todo {
