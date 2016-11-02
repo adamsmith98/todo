@@ -1,23 +1,29 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todo.service';
+import { Todo } from './todo';
+import './rxjs-operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TodoService]
 })
+
 export class AppComponent {
-  todos: Todo[] = [{title: 'Maths homework', deadline: 'Yesterday', priority: 5},
-                   {title: 'Wash dishes', deadline: 'Today', priority: 3},
-                   {title: 'Go shopping', deadline: 'Tomorrow', priority: 4},
-                   {title: 'Make dinner', deadline: '6pm today', priority: 5}];
+  todos: Todo[] = [];
+
+  constructor(private todoService: TodoService) { }
 
   addNew(newTitle: string, newDeadline: string, newPriority: number) {
-    this.todos.unshift({title: newTitle, deadline: newDeadline, priority: newPriority});
+    this.todoService.newTodo(newTitle, newDeadline, newPriority).subscribe(todo => this.todos.push(todo));
   }
-}
 
-class Todo {
-  title: string;
-  deadline: string;
-  priority: number;
+  getTodos() {
+    this.todoService.getTodos().subscribe(todos => this.todos = todos);
+  }
+
+  ngOnInit(): void {
+    this.getTodos();
+  }
 }
