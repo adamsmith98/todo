@@ -20,8 +20,12 @@ export class TodoService {
 
   newTodo (title: string, deadline: string, priority: number): Observable<Todo> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    let body = JSON.stringify({title: title, deadline: deadline, priority: priority});
+    let body = JSON.stringify({ title: title, deadline: deadline, priority: priority });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://localhost:4201', body, options).map((res: Response) => (res.json()));
+  }
+
+  deleteTodo (id: string): Observable<Todo> {
+    return this.http.delete('http://localhost:4201/' + id).map((res: Response) => (res.json()));
   }
 }

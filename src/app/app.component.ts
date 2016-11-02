@@ -23,6 +23,10 @@ export class AppComponent {
     this.todoService.getTodos().subscribe(todos => this.todos = todos);
   }
 
+  deleteTodo(id: string) {
+    this.todoService.deleteTodo(id).subscribe(todo => this.getTodos());
+  }
+
   ngOnInit(): void {
     this.getTodos();
   }

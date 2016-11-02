@@ -11,6 +11,7 @@
      <h3 md-line class="todo-title">{{todo.title}}</h3>
      <p md-line class="todo-deadline">{{todo.deadline}}</p>
      <p md-line class="todo-priority">{{todo.priority}}</p>
+     <button md-button (click)="deleteTodo(todo._id)"><i class="material-icons">delete</i></button>
    </md-card>
  </li>
 </ul>
