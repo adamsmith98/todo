@@ -1,5 +1,9 @@
 # Todo
 
+This project is still very much in early development, with only basic functionality and no styling and no unit testing.
+To run with a backend, you must follow the instructions on my todoBackend to start the web server which this app connects
+to.
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
 
 ## Development server
@@ -29,8 +33,3 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-<<<<<<< HEAD
-=======
-=======
-# todo
->>>>>>> ef6b25f8d65f61e7196e534732ad9d74010d0fd6

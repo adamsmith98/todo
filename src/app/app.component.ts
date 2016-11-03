@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(private todoService: TodoService) { }
 
   addNew(newTitle: string, newDeadline: string, newPriority: number) {
-    this.todoService.newTodo(newTitle, newDeadline, newPriority).subscribe(todo => this.todos.push(todo));
+    this.todoService.newTodo(newTitle, newDeadline, newPriority).subscribe(todo => this.todos.unshift(todo));
   }
 
   getTodos() {

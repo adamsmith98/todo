@@ -1,9 +1,15 @@
+<md-toolbar [color]="primary">
+  <span>Todo</span>
+</md-toolbar>
 <md-card>
-  <i class="material-icons">note_add</i>
-  <md-input placeholder="title" [(ngModel)]="newTitle"></md-input>
-  <md-input placeholder="deadline" [(ngModel)]="newDeadline"></md-input>
-  <md-input placeholder="priority" [(ngModel)]="newPriority"></md-input>
-  <button md-button (click)="addNew(newTitle, newDeadline, newPriority)">Add</button>
+  <md-card-content>
+    <md-input placeholder="title" [(ngModel)]="newTitle"></md-input>
+    <md-input placeholder="deadline" [(ngModel)]="newDeadline"></md-input>
+    <md-input placeholder="priority" [(ngModel)]="newPriority"></md-input>
+  </md-card-content>
+  <md-card-actions>
+    <button md-icon-button (click)="addNew(newTitle, newDeadline, newPriority); newTitle=''; newDeadline=''; newPriority=''"><md-icon>add</md-icon></button>
+  </md-card-actions>
 </md-card>
 <ul class="app-list">
  <li *ngFor="let todo of todos">
@@ -11,7 +17,7 @@
      <h3 md-line class="todo-title">{{todo.title}}</h3>
      <p md-line class="todo-deadline">{{todo.deadline}}</p>
      <p md-line class="todo-priority">{{todo.priority}}</p>
-     <button md-button (click)="deleteTodo(todo._id)"><i class="material-icons">delete</i></button>
+     <button md-icon-button (click)="deleteTodo(todo._id)"><md-icon>delete</md-icon></button>
    </md-card>
  </li>
 </ul>

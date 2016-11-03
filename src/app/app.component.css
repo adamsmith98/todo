@@ -1,7 +1,25 @@
+md-toolbar {
+  background-color: #00b8d4;
+  color: #fff;
+}
+
 md-card {
   margin: 2%;
+  background-color: #0097a7;
 }
 
 li {
   list-style-type: none;
+}
+
+md-icon {
+  color: #382a72;
+}
+
+h3, p {
+  color: #ebdeed;
+}
+
+body {
+  background-color: #efedef;
 }
